@@ -1,0 +1,10 @@
+<div class="dep-detail-wrapper">
+    <h2>Department Details</h2>
+
+    <div *ngFor="let item of dep_data | keyvalue">
+        <p>
+            <strong> {{ item.key }}: </strong>
+            {{ item.value }}
+        </p>
+    </div>
+</div>

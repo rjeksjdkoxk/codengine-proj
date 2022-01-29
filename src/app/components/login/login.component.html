@@ -1,0 +1,45 @@
+<div class="register-container">
+    <h2>Login Form</h2>
+    <form [formGroup]="userForm" (submit)="saveUser()">
+        <div class="input-wrapper">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" id="email" />
+            </mat-form-field>
+            <mat-error
+                *ngIf="submitted && userForm.get('email').hasError('required')"
+                >Email is Required
+            </mat-error>
+            <mat-error
+                *ngIf="
+                    submitted && userForm.get('email').hasError('emailInvalid')
+                "
+                >Email is invalid
+            </mat-error>
+        </div>
+
+        <div class="input-wrapper">
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" id="password" />
+            </mat-form-field>
+            <mat-error
+                *ngIf="
+                    submitted && userForm.get('password').hasError('required')
+                "
+                >Password is Required
+            </mat-error>
+            <mat-error
+                *ngIf="
+                    submitted &&
+                    (userForm.get('password').hasError('minlength') ||
+                        userForm.get('password').hasError('passwordInvalid'))
+                "
+                >Password must be min 8 char long and have lowercase, uppercase
+                and numbers
+            </mat-error>
+        </div>
+
+        <button mat-flat-button color="primary" #loginBtn>Login</button>
+    </form>
+</div>

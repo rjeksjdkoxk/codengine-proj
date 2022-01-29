@@ -1,0 +1,27 @@
+.register-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        border: 2px solid #3587a4;
+        border-radius: 10px;
+        width: 50%;
+        margin: 0 auto;
+
+        .input-wrapper {
+            padding: 0 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
